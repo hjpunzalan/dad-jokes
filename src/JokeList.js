@@ -15,6 +15,7 @@ export default class JokeList extends Component {
 			jokes: JSON.parse(window.localStorage.getItem('jokes') || '[]')
 		};
 		this.handleVote = this.handleVote.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -22,11 +23,15 @@ export default class JokeList extends Component {
 	}
 
 	handleVote(id, change) {
-		this.setState(st => ({
-			jokes: st.jokes.map(j =>
-				j.id === id ? { ...j, votes: j.votes + change } : j
-			)
-		}));
+		this.setState(
+			st => ({
+				jokes: st.jokes.map(j =>
+					j.id === id ? { ...j, votes: j.votes + change } : j
+				)
+			}),
+			() =>
+				window.localStorage.setItem('jokes', JSON.stringify(this.state.jokes))
+		);
 	}
 
 	async getJokes() {
@@ -37,8 +42,17 @@ export default class JokeList extends Component {
 			});
 			jokes.push({ id: uuid(), text: res.data.joke, votes: 0 });
 		}
-		this.setState({ jokes: jokes });
-		window.localStorage.setItem('jokes', JSON.stringify(jokes));
+		this.setState(
+			st => ({
+				jokes: [...st.jokes, ...jokes]
+			}),
+			() =>
+				window.localStorage.setItem('jokes', JSON.stringify(this.state.jokes))
+		);
+	}
+
+	handleClick() {
+		this.getJokes();
 	}
 
 	render() {
@@ -53,7 +67,12 @@ export default class JokeList extends Component {
 						alt="zany face"
 						className="JokeList__sidebar-image"
 					/>
-					<button className="JokeList__sidebar-getmore">New Jokes</button>
+					<button
+						className="JokeList__sidebar-getmore"
+						onClick={this.handleClick}
+					>
+						New Jokes
+					</button>
 				</div>
 				<div className="JokeList__jokes">
 					{this.state.jokes.map(j => {

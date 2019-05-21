@@ -1,0 +1,55 @@
+@import url('https://afeld.github.io/emoji-css/emoji.css');
+
+.Joke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 1rem;
+
+    &-buttons {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        justify-content: center;
+        width: 25%;
+    }
+
+    &-text {
+        width: 75%;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        line-height: 2rem;
+    }
+
+    &-votes {
+        width: 5rem;
+        height: 5rem;
+        line-height: 4rem;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 3px solid red;
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 300;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    }
+
+    &-smiley {
+        font-size: 3rem;
+        margin-left: auto;
+        border-radius: 50%;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    }
+}
+
+.fa-arrow {
+
+    &-up,
+    &-down {
+        font-size: 1.5rem;
+        margin: 1rem;
+        cursor: pointer;
+    }
+}

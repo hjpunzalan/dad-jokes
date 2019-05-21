@@ -49,7 +49,7 @@ export default class Joke extends Component {
 				</div>
 				<div className="Joke-text">{this.props.text}</div>
 				<div className="Joke-smiley">
-					<i class={this.getEmoji()} />
+					<i className={this.getEmoji()} />
 				</div>
 			</div>
 		);

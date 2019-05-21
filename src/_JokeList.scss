@@ -1,0 +1,53 @@
+.JokeList {
+    display: flex;
+    width: 80%;
+    height: 80%;
+
+    &__jokes {
+        height: 90%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        overflow: scroll;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6);
+    }
+
+    &__sidebar {
+        background-color: rgb(155, 95, 184);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4), 0 2rem 3rem inset rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        z-index: 2;
+
+        &-title {
+            font-size: 4rem;
+            margin: 2rem;
+            color: white;
+            font-weight: 100;
+            letter-spacing: .8rem;
+
+            span {
+                font-weight: 900;
+                letter-spacing: 0;
+            }
+        }
+
+        &-image {
+            display: block;
+            width: 50%;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            transition: all .2s;
+            margin: 3rem 0;
+
+            &:hover {
+                transform: rotate(20deg) scale(1.2);
+            }
+        }
+    }
+}

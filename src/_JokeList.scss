@@ -3,6 +3,7 @@
     width: 80%;
     height: 80%;
 
+
     &__jokes {
         height: 90%;
         width: 75%;
@@ -49,11 +50,37 @@
             width: 50%;
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
             border-radius: 50%;
-            transition: all .2s;
+            transition: all 2s;
             margin: 3rem 0;
 
             &:hover {
-                transform: rotate(20deg) scale(1.2);
+                transform: rotate(360deg) scale(1.2);
+            }
+        }
+
+        &-getmore {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+            word-spacing: 2rem;
+            margin: 2rem;
+            border-radius: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg,
+                    rgb(179, 231, 252) 0%,
+                    rgb(179, 231, 252) 50%,
+                    rgb(242, 90, 163) 50%,
+                    rgb(242, 90, 163) 100%);
+
+            transition: all .5s;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
             }
         }
     }

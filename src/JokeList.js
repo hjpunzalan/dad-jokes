@@ -93,7 +93,7 @@ export default class JokeList extends Component {
 						className="JokeList__sidebar-getmore"
 						onClick={this.handleClick}
 					>
-						New Jokes
+						Fetch Jokes
 					</button>
 				</div>
 				<div className="JokeList__jokes">

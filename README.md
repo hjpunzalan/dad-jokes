@@ -1,4 +1,4 @@
-<h1> Dad Jokes </h1> <br><br>
+<h1> Dad Jokes </h1>
 
 When the page loads, it should fetch 10 jokes.
 
